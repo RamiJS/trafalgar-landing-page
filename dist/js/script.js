@@ -14,15 +14,23 @@ const navItems = [
 navItems.forEach((item, index) => {
     const li = document.createElement('li')
     const a = document.createElement('a')
+    const mobileNavContainer = document.querySelector('.list-container')
     a.innerText = item.name
     a.href = item.href
     a.classList.add('text-[#1F1534]/50', 'capitalize', 'cursor-pointer')
     if (index === 0) {
         a.classList.add('text-[#1F1534]', 'font-bold');
     }
+
     li.appendChild(a)
-    navContainer.appendChild(li)
+    navContainer.appendChild(li.cloneNode(true))
+    mobileNavContainer.appendChild(li)
 })
+
+
+
+
+
 
 const services = [
     {label: 'Search doctor', paragraph: 'Choose your doctor from thousands of specialist, general, and trusted hospitals', icon: '/dist/icons/search-doctor.svg'},
@@ -143,3 +151,28 @@ reviews.forEach(item => {
   div.appendChild(grid);
   swiperWrapper.appendChild(div);
 });
+
+
+
+
+let navIcon = document.querySelector('.menu');
+let mobileNav = document.querySelector('.mobile-nav')
+
+function resizeInput() {
+    
+
+    if(input.value.length > 12) {
+        playerName.style.width = input.value.length * 0.91 + "ch";
+    } else {
+        playerName.style.width = input.value.length + "ch";
+    }
+  }
+
+
+navIcon.addEventListener('click', activateMenu)
+
+function activateMenu() {
+    navIcon.classList.toggle('is-active');
+    mobileNav.classList.toggle('is-active');
+
+}
