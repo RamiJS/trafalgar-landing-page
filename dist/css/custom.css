@@ -118,6 +118,8 @@
 
 .navbar {
   position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .right-icons {
@@ -223,11 +225,78 @@
 
 
 
-@media screen and (max-width: 796px){
+@media screen and (max-width: 1024px){
   .menu{
     opacity: 1;
     visibility: visible;
   }
 }
 
+
+
+.btn{
+  display: block;
+  position: relative;
+  transition: all .35s;
+}
+
+.btn span{
+  position: relative;
+  z-index: 2;
+}
+
+.btn:after{
+  position: absolute;
+  content: "";
+  border-radius: 9999px;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transition: all .35s;
+}
+
+.btn:hover{
+  color: #000;
+  background-color: #fff;
+}
+
+.btn:hover:after{
+  width: 100%;
+}
+
+/* <><><><><><><<><><><><><><><><<>< */
+
+.outlinedBtn{
+  display: block;
+  position: relative;
+  transition: all .35s;
+}
+
+.outlinedBtn span{
+  position: relative;
+  z-index: 2;
+}
+
+.outlinedBtn:after{
+  position: absolute;
+  content: "";
+  border-radius: 9999px;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #458FF6;
+  transition: all .35s;
+}
+
+.outlinedBtn:hover{
+  color: #fff;
+  background-color: #458FF6;
+}
+
+.outlinedBtn:hover:after{
+  width: 100%;
+}
 

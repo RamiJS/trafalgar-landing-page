@@ -153,8 +153,6 @@ reviews.forEach(item => {
 });
 
 
-
-
 let navIcon = document.querySelector('.menu');
 let mobileNav = document.querySelector('.mobile-nav')
 
@@ -176,3 +174,22 @@ function activateMenu() {
     mobileNav.classList.toggle('is-active');
 
 }
+
+
+const slideUp = {
+    distance: '50px',
+    duration: 2000,
+    origin: 'bottom',
+    reset: true,
+};
+
+const slideFromLeft = {
+    distance: '50px',
+    duration: 2500,
+    origin: 'left',
+    reset: true,
+}
+
+
+ScrollReveal().reveal('.tran', slideUp);
+ScrollReveal().reveal('.tranLeft', slideFromLeft);
